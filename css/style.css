@@ -52,7 +52,7 @@ input[type=button] {
     display: flex;
     flex-flow: row wrap;
     align-items: baseline;
-    justify-content: space-around;
+    justify-content: left;
     box-sizing: border-box;
     margin-top: 30px;
     width: 100%;
@@ -67,6 +67,7 @@ input[type=button] {
 
 .list {
     display: flex;
+    flex: 1 0 0%;
     flex-direction: column;
     box-sizing: border-box;
     border: solid 1px #749FF6;
@@ -77,13 +78,13 @@ input[type=button] {
     margin: 5px 10px;
 }
 
-.list-header *:not(:first-child)
-{
+.list-header *:not(:first-child) {
     margin-left: 5px;
 }
 
 .row {
     display: flex;
+    justify-content: flex-start;
     flex-direction: row;
 }
 
@@ -91,7 +92,8 @@ input[type=button] {
     justify-content: space-between;
 }
 
-.edit-list, #delete-list {
+.edit-list,
+#delete-list {
     cursor: pointer;
     text-align: center;
     padding: 5px;
@@ -109,13 +111,15 @@ input[type=button] {
 
 /* Наведение на закрытие */
 
-.delete-text, .delete-text:hover {
+.delete-text,
+.delete-text:hover {
     cursor: pointer;
     position: absolute;
     display: none;
     margin-left: -15px;
 }
 
-.card-text:hover + .delete-text, .delete-text:hover {
+.card-text:hover+.delete-text,
+.delete-text:hover {
     display: unset;
 }
