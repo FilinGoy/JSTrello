@@ -3,17 +3,26 @@
     font-size: 12px;
     font-weight: 400;
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 .main__form {
-    width: 800px;
-    padding-top: 50px;
+    width: 100%;
+    padding: 0 2%;
 }
 
 .border {
@@ -22,42 +31,45 @@ body {
 
 .block1 {
     display: flex;
-    flex-direction: column;
+    width: 100%;
     justify-content: space-between;
-    width: 230px;
-    height: 100px;
     padding: 15px;
+    gap: 10px;
+
+    >* {
+        width: 100%;
+    }
 }
 
 .block1 label {
-    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-size: larger;
 }
 
 .block1 input[type=text] {
-    width: 170px;
-    height: 25px;
     padding: 5px;
 }
 
 input[type=button] {
-    background-color: gray;
     padding: 10px;
-    width: 120px;
     cursor: pointer;
+
+    &:hover {
+        background-color: gainsboro;
+    }
 }
 
 .block2 {
+    height: 75vh;
     display: flex;
-    flex-flow: row wrap;
-    align-items: baseline;
-    justify-content: left;
-    box-sizing: border-box;
-    margin-top: 30px;
-    width: 100%;
-    min-height: 400px;
-    padding: 5px 10px;
+    align-items: start;
+    overflow-x: auto;
+    padding: 10px;
+    white-space: nowrap;
+    gap: 20px;
 }
 
 .list-header {
@@ -67,19 +79,33 @@ input[type=button] {
 
 .list {
     display: flex;
-    flex: 1 0 0%;
+    min-width: 235px;
+    max-height: 100%;
     flex-direction: column;
     box-sizing: border-box;
     border: solid 1px #749FF6;
     padding: 0 5px;
     background-color: whitesmoke;
-    min-width: 155px;
-    min-height: 10px;
-    margin: 5px 10px;
 }
 
 .list-header *:not(:first-child) {
     margin-left: 5px;
+}
+
+.list-cards {
+    display: flex;
+    min-height: 150px;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.card {
+    margin: 10px 0;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .row {
@@ -89,6 +115,7 @@ input[type=button] {
 }
 
 .between {
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 
