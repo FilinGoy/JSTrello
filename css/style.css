@@ -86,10 +86,42 @@ input[type=button] {
     border: solid 1px #749FF6;
     padding: 0 5px;
     background-color: whitesmoke;
+    cursor: move;
 }
 
-.list-header *:not(:first-child) {
-    margin-left: 5px;
+.list-header {
+    width: 100%;
+    justify-content: space-between;
+
+    h2 {
+        position: relative;
+        text-wrap: wrap;
+        word-break: break-all;
+        cursor: text;
+        padding: 5px 25px 5px 5px;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+
+    h2::after {
+        content: "✏️";
+        font-size: 1.25rem;
+        line-height: 1.35rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    h2:focus {
+        padding: 5px;
+        margin-left: 5px;
+    }
+
+    h2:focus::after {
+        opacity: 0;
+    }
 }
 
 .list-cards {
@@ -105,7 +137,7 @@ input[type=button] {
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    cursor: grab;
 }
 
 .row {
@@ -119,8 +151,19 @@ input[type=button] {
     justify-content: space-between;
 }
 
+.add-card {
+    padding: 15px 5px;
+    cursor: copy;
+}
+
+hr {
+    width: auto;
+    color: slategray;
+    margin: 0 5px;
+}
+
 .edit-list,
-#delete-list {
+.delete-list {
     cursor: pointer;
     text-align: center;
     padding: 5px;
